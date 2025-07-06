@@ -1,8 +1,20 @@
 // 新建图层
+// function btn_layer_new() {
+//     var newLayer = app.activeDocument.artLayers.add();
+//     newLayer.name = "DioBig";
+// }
 function btn_layer_new() {
-    var newLayer = app.activeDocument.artLayers.add();
+    var doc = app.activeDocument;
+    var activeLayer = doc.activeLayer;
+
+    // 新建图层
+    var newLayer = doc.artLayers.add();
     newLayer.name = "DioBig";
+
+    // 把新图层移动到激活图层的上面
+    newLayer.move(activeLayer, ElementPlacement.PLACEAFTER);
 }
+
 
 // 删除当前图层
 function btn_layer_delete() {

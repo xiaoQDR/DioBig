@@ -33,7 +33,7 @@
                 </Lifecycle>
                 <UI>
                     <Type>Panel</Type>
-                    <Menu>HelloWord</Menu>
+                    <Menu>DIO</Menu>
                     <Geometry>
                         <Size>
                             <Height>300</Height>
