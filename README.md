@@ -1,3 +1,7 @@
+插件存放地址C:\Users\34792\AppData\Roaming\Adobe\CEP\extensions
+执行文件里面2022.reg，打开开发者模式
+
+
 cep插件
 功能
 
