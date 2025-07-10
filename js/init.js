@@ -9,5 +9,6 @@ cs.evalScript('$.evalFile("' + extensionRoot + 'inspect_tool.jsx")');
 cs.evalScript('$.evalFile("' + extensionRoot + 'ps_tool.jsx")');
 cs.evalScript('$.evalFile("' + extensionRoot + 'sd.jsx")');
 cs.evalScript('$.evalFile("' + extensionRoot + 'text.jsx")');
+cs.evalScript('$.evalFile("' + extensionRoot + 'listenForegroundColor.jsx")');
 
 
