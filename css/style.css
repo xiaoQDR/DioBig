@@ -8,7 +8,7 @@ body {
   user-select: none;
   display: flex;
   justify-content: center;
-  align-items: flex-start;    /* 垂直顶部对齐 */
+  align-items: flex-start;
   height: 100vh;
   background: #555;
 }
@@ -17,10 +17,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 260px;               /* 固定宽度 */
-  background: #000;           /* 背景色 */
-  border-radius: 0;           /* 圆角 */
-  padding: 0;                 /* 内边距 */
+  width: 260px;
+  background: #000;
+  padding: 0;
 }
 
 #picker {
@@ -28,25 +27,19 @@ body {
   margin: 4px auto;
 }
 
-/* 所有按钮容器 */
-.button-tool,
-.button-color,
-.button-doc,
-.button-layer,
-.button-layer-adjustments,
-.button-inspect,
-.button-channels {
+/* 按钮容器样式 */
+.button-group {
   display: flex;
-  flex-wrap: nowrap;          /* 不换行 */
-  justify-content: center;    /* 居中 */
-  align-items: center;        /* 垂直居中 */
-  gap: 2px;                   /* 按钮间距 */
-  margin-top: 2px;            /* ✅ 缩小竖向间距 */
-  width: 96%;                 /* 占容器宽度 */
-  height: 42px;               /* 固定高度 */
-  background: #222;           /* 按钮容器背景色 */
-  box-sizing: border-box;
-  border-radius: 2px;         /* 容器圆角 */
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  /* 或 space-between */
+  align-items: center;
+  gap: 2px;
+  margin-top: 2px;
+  width: 96%;
+  height: 42px;
+  background: #222;
+  border-radius: 2px;
 }
 
 /* 按钮样式 */
@@ -64,14 +57,12 @@ button {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  font-size: 14px;
+  font-size: 8px;
   transition: background 0.2s;
-  outline: none;
 }
 
-
 button:focus {
-  outline: none;          /* 去掉聚焦时的轮廓 */
+  outline: none;
 }
 
 button:hover {
@@ -82,4 +73,48 @@ button:disabled {
   background: #333;
   color: #999;
   cursor: not-allowed;
+}
+
+/* 折叠区域 */
+.foldable-group {
+  width: 96%;
+  margin-top: 2px;
+}
+
+/* 折叠按钮 */
+.fold-toggle {
+  display: block;
+  width: 100%;
+  height: 24px;
+  /* 高度缩小 */
+  text-align: left;
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 6px 8px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 10px;
+}
+
+/* 折叠内容（带动画） */
+.foldable-group .fold-content {
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 0;
+  background: #222;
+  border-radius: 4px;
+  padding: 0 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  transition: max-height 0.3s ease, margin-top 0.3s ease, padding 0.3s ease;
+}
+
+.foldable-group.active .fold-content {
+  max-height: 500px;
+  /* 根据需要调整 */
+  margin-top: 5px;
+  padding: 4px;
 }

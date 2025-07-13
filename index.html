@@ -1,72 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>dioBig</title>
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
   <div class="container">
-    <div class="button-color">
-      <button id="btn_refresh_color">刷新前景色</button>
-    </div>
-    <div id="picker"></div>
 
-    <div class="button-color">
-      <button id="btn_refresh_color">刷新前景色</button>
-    </div>
-
-    <div class="button-layer">
-      <button id="btn_layer_new">新</button>
-      <button id="btn_layer_delete">删除</button>
-      <button id="btn_layer_addmask">区遮</button>
-      <button id="btn_layer_Gmask">组遮</button>
-      <button id="btn_layer_pathmask" disabled>路遮</button>
+    <!-- 色盘 -->
+    <div class="foldable-group">
+      <button class="fold-toggle">色盘▶</button>
+      <div class="fold-content">
+        <div class="button-group">
+          <button id="btn_refresh_color">刷新前景色</button>
+        </div>
+        <div id="picker"></div>
+      </div>
     </div>
 
-    <!-- 调整图层按钮 -->
-    <div class="button-layer-adjustments">
-      <button id="btn_new_solidcolor">纯色</button>
-      <button id="btn_new_brightness">亮对</button>
-      <button id="btn_new_levels">色阶</button>
-      <button id="btn_new_curves">曲线</button>
-      <button id="btn_new_hue">色相</button>
-      <button id="btn_new_colorbalance">色平</button>
+    <!-- 图层调整 -->
+    <div class="foldable-group">
+      <button class="fold-toggle">图层调整&清理▶</button>
+      <div class="fold-content">
+        <div class="button-group">
+          <button id="btn_layer_new">新</button>
+          <button id="btn_layer_delete">删除</button>
+          <button id="btn_layer_addmask">区遮</button>
+          <button id="btn_layer_Gmask">组遮</button>
+          <button id="btn_layer_pathmask" disabled>路遮</button>
+        </div>
+
+        <div class="button-group">
+          <button id="btn_doc_cleardata">清</button>
+        </div>
+      </div>
     </div>
 
-    <div class="button-tool">
-      <button id="btn_tool_Lasso">套</button>
-      <button id="btn_tool_PolygonLasso">多</button>
-      <button id="btn_tool_RectMarquee">矩</button>
-      <button id="btn_tool_EllipticalMarquee">椭</button>
-      <button id="btn_tool_SingleRow" disabled>行</button>
-      <button id="btn_tool_SingleColumn" disabled>列</button>
+    <!-- 选区&抠图 -->
+    <div class="foldable-group">
+      <button class="fold-toggle">选区&抠图▶</button>
+      <div class="fold-content">
+        <div class="button-group">
+          <button id="btn_tool_Lasso">套</button>
+          <button id="btn_tool_PolygonLasso">多</button>
+          <button id="btn_tool_RectMarquee">矩</button>
+          <button id="btn_tool_EllipticalMarquee">椭</button>
+          <button id="btn_tool_SingleRow" disabled>行</button>
+          <button id="btn_tool_SingleColumn" disabled>列</button>
+        </div>
+
+        <div class="button-group">
+          <button id="btn_content_fill">内容识别填充</button>
+        </div>
+
+        <div class="button-group">
+          <button id="btn_show_red">红</button>
+          <button id="btn_show_green">绿</button>
+          <button id="btn_show_blue">蓝</button>
+          <button id="btn_show_rgb">RGB</button>
+        </div>
+      </div>
     </div>
 
-    <div class="button-channels">
-      <button id="btn_show_red">红</button>
-      <button id="btn_show_green">绿</button>
-      <button id="btn_show_blue">蓝</button>
-      <button id="btn_show_rgb">RGB</button>
+    <!-- 色调调整 -->
+    <div class="foldable-group">
+      <button class="fold-toggle">色调调整▶</button>
+      <div class="fold-content">
+        <div class="button-group">
+          <button id="btn_new_solidcolor">纯色</button>
+          <button id="btn_new_brightness">亮对</button>
+          <button id="btn_new_levels">色阶</button>
+          <button id="btn_new_curves">曲线</button>
+          <button id="btn_new_hue">色相</button>
+          <button id="btn_new_colorbalance">色平</button>
+        </div>
+        <div class="button-group">
+          <button id="btn_inspect_gray">明度检查</button>
+          <button id="btn_inspect_color">颜色检查</button>
+        </div>
+      </div>
     </div>
 
-    <div class="button-inspect">
-      <button id="btn_inspect_gray">明度检查</button>
-      <button id="btn_inspect_color">颜色检查</button>
-    </div>
+    <!-- 景深-->
+    <div class="foldable-group">
+      <button class="fold-toggle">景深&模糊▶</button>
+      <div class="fold-content">
 
-    <div class="button-doc">
-      <button id="btn_doc_cleardata">清</button>
+
+      </div>
     </div>
-    <!-- <div style="margin-bottom:8px;">
-      <input type="text" id="prompt" placeholder="输入提示词" style="width:200px;">
-      <button onclick="generateImage()">生成图片</button>
+    <div class="button-group">
+      <button id="btn_duplicate_blur">复制并模糊</button>
     </div>
-    <div id="status"></div> -->
-    <!-- <button id="btn_refresh_color">刷新前景色</button> -->
-    <button id="text" style="display: none;">text</button>
   </div>
 
   <script src="./js/csinterface.js"></script>
@@ -74,6 +103,8 @@
   <script src="./js/init.js"></script>
   <script src="./js/buttons.js"></script>
   <script src="./js/colorpicker.js"></script>
+  <script src="./js/fold.js"></script>
   <script src="./js/sd.js"></script>
 </body>
+
 </html>
