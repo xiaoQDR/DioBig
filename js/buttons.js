@@ -143,27 +143,13 @@ document.getElementById("btn_inspect_color").addEventListener("click", function 
   cs.evalScript("inspect_tool_color()");
 });
 
-//模糊
-document.getElementById("btn_blur_image").addEventListener("click", function () {
-  // 这里可以改 radius 数值
-  var radius = 10;
-  cs.evalScript("applyGaussianBlur(" + radius + ")");
-});
 
+
+document.getElementById("btn_duplicate_blur").addEventListener("click", function () {
+  cs.evalScript("mergeAndBlurCopies()");
+});
 
 //text
 document.getElementById("text").addEventListener("click", function () {
   alert("text1");
-  cs.evalScript("text()");
-});
-
-
-
-
-
-
-
-
-document.getElementById("btn_duplicate_blur").addEventListener("click", function () {
-  cs.evalScript("alert(typeof duplicateAndBlur)");
 });
