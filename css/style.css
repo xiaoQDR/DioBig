@@ -10,7 +10,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   height: 100vh;
-  background: #555;
+  background: #000;
 }
 
 .container {
@@ -117,4 +117,85 @@ button:disabled {
   /* 根据需要调整 */
   margin-top: 5px;
   padding: 4px;
+}
+
+
+
+
+/* 父容器，使用flexbox布局 */
+.radio-group {
+  display: flex;
+  gap: 10px;
+  /* 按钮间隔 */
+  flex-wrap: wrap;
+  /* 让按钮换行 */
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* 单选框容器 */
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  /* 调整按钮字体大小 */
+  min-width: 90px;
+  /* 防止按钮太小，保证最小宽度 */
+  max-width: 160px;
+  /* 防止按钮变得过大 */
+}
+
+/* 隐藏默认单选框 */
+.radio-option input[type="radio"] {
+  display: none;
+}
+
+/* 自定义标签样式 */
+.radio-label {
+  display: inline-block;
+  padding: 5px 12px;
+  background-color: transparent;
+  border: 2px solid #007bff;
+  /* 幽灵按钮边框颜色 */
+  border-radius: 20px;
+  color: #007bff;
+  /* 幽灵按钮文字颜色 */
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  /* 控制字体大小 */
+}
+
+/* 选中时的样式 */
+.radio-option input[type="radio"]:checked+.radio-label {
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.6);
+}
+
+/* 自定义输入框 */
+.custom-input {
+  width: 60px;
+  /* 缩小输入框宽度 */
+  margin-left: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 12px;
+  transition: border-color 0.3s ease;
+}
+
+/* 输入框聚焦时的样式 */
+.custom-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* 提升按钮样式，添加幽灵按钮动画效果 */
+.radio-option input[type="radio"]:hover+.radio-label {
+  background-color: rgba(0, 123, 255, 0.1);
+  color: #007bff;
 }

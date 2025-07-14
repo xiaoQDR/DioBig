@@ -15,10 +15,10 @@
     <div class="foldable-group">
       <button class="fold-toggle">色盘▶</button>
       <div class="fold-content">
+        <div id="picker"></div>
         <div class="button-group">
           <button id="btn_refresh_color">刷新前景色</button>
         </div>
-        <div id="picker"></div>
       </div>
     </div>
 
@@ -32,10 +32,6 @@
           <button id="btn_layer_addmask">区遮</button>
           <button id="btn_layer_Gmask">组遮</button>
           <button id="btn_layer_pathmask" disabled>路遮</button>
-        </div>
-
-        <div class="button-group">
-          <button id="btn_doc_cleardata">清</button>
         </div>
       </div>
     </div>
@@ -91,6 +87,36 @@
       <button class="fold-toggle">景深&模糊▶</button>
       <div class="fold-content">
         <button id="btn_duplicate_blur">复制并模糊</button>
+      </div>
+    </div>
+
+    <!-- 导出-->
+    <div class="foldable-group">
+      <button class="fold-toggle">文件&导出▶</button>
+      <div class="fold-content">
+        <div class="button-group">
+          <button id="btn_doc_cleardata">源文件清除清</button>
+        </div>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="export_size" value="600" checked>
+            <span class="radio-label">600×600</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="export_size" value="1024">
+            <span class="radio-label">1024×1024</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="export_size" value="custom">
+            <span class="radio-label">自定义</span>
+            <input type="number" id="custom_width" placeholder="宽(px)" class="custom-input" />
+            <input type="number" id="custom_height" placeholder="高(px)" class="custom-input" />
+          </label>
+        </div>
+        <div class="button-group">
+          <button id="btn_export_jpg">导出为JPG</button>
+          <button id="btn_export_png">导出为PNG</button>
+        </div>
       </div>
     </div>
 

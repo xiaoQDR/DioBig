@@ -12,5 +12,6 @@ cs.evalScript('$.evalFile("' + extensionRoot + 'text.jsx")');
 cs.evalScript('$.evalFile("' + extensionRoot + 'listenForegroundColor.jsx")');
 cs.evalScript('$.evalFile("' + extensionRoot + 'content_aware_fill.jsx")');
 cs.evalScript('$.evalFile("' + extensionRoot + 'blur_layer.jsx")');
+cs.evalScript('$.evalFile("' + extensionRoot + 'export_img.jsx")');
 
 
